@@ -4,19 +4,19 @@
 #include <stddef.h>
 
 typedef enum {
-    HASH_MAP_SUCCESS,
-    HASH_MAP_FAILURE,
+	HASH_MAP_SUCCESS,
+	HASH_MAP_FAILURE,
 } hash_map_status;
 
 typedef struct {
-    char* key;
-    void* value;
+	char* key;
+	void* value;
 } entry;
 
 typedef struct {
-    entry *entries;
-    size_t capacity;
-    size_t size;
+	entry* entries;
+	size_t capacity;
+	size_t size;
 } hash_map;
 
 hash_map_status init_hash_map(hash_map *map);
@@ -27,5 +27,7 @@ hash_map_status my_map_set(hash_map* map, const char* key, void* value, size_t v
 
 void* my_map_get(hash_map* map, const char* key);
 char* my_map_has(hash_map* map, const char* key);
+
+char* convertIntToString(int a);
 
 #endif
